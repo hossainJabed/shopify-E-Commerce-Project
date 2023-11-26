@@ -14,8 +14,8 @@
                         <i class="ti-layout-grid2"></i><span class="hide-menu">Category Module</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="app-calendar.html">Create Category</a></li>
-                        <li><a href="app-chat.html">List Category</a></li>
+                        <li><a href="{{route('category')}}">Create Category</a></li>
+                        <li><a href="{{route('category.show')}}">List Category</a></li>
                     </ul>
                 </li>
                 <li>
@@ -23,8 +23,8 @@
                         <i class="ti-email"></i><span class="hide-menu">Sub Category</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="app-email.html">Create Subcategory</a></li>
-                        <li><a href="app-email-detail.html">List Subcategory</a></li>
+                        <li><a href="{{route('subcategory')}}">Create Subcategory</a></li>
+                        <li><a href="{{route('subcategory.show')}}">List Subcategory</a></li>
                     </ul>
                 </li>
                 <li>

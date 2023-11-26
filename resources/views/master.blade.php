@@ -25,6 +25,8 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    @yield('style-lib')
+    @stack('custom-css')
 </head>
 
 <body class="skin-blue fixed-layout">
@@ -125,10 +127,7 @@
     <!-- ============================================================== -->
     <!-- footer -->
     <!-- ============================================================== -->
-    <footer class="footer">
-        @ {{date('y-m-d')}}2021 Desigin & Develop by
-        <a href="https://www.reflexsoft.com/">Reflex Soft.Ltd</a>
-    </footer>
+    @include('include.footer')
     <!-- ============================================================== -->
     <!-- End footer -->
     <!-- ============================================================== -->
@@ -150,6 +149,7 @@
 <script src="{{url('admin')}}/dist/js/sidebarmenu.js"></script>
 <!--Custom JavaScript -->
 <script src="{{url('admin')}}/dist/js/custom.min.js"></script>
+
 <!-- ============================================================== -->
 <!-- This page plugins -->
 <!-- ============================================================== -->
@@ -158,10 +158,13 @@
 <script src="{{url('admin')}}/assets/node_modules/morrisjs/morris.min.js"></script>
 <script src="{{url('admin')}}/assets/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
 <!-- Popup message jquery -->
-<script src="{{url('admin')}}/assets/node_modules/toast-master/js/jquery.toast.js"></script>
+{{--<script src="{{url('admin')}}/assets/node_modules/toast-master/js/jquery.toast.js"></script>--}}
 <!-- Chart JS -->
 <script src="{{url('admin')}}/dist/js/dashboard1.js"></script>
-<script src="{{url('admin')}}/assets/node_modules/toast-master/js/jquery.toast.js"></script>
+{{--<script src="{{url('admin')}}/assets/node_modules/toast-master/js/jquery.toast.js"></script>--}}
+
+@yield('script-lib')
+@stack('custom-js')
 </body>
 </html>
 
