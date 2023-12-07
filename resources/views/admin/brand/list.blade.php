@@ -23,9 +23,9 @@
           <div class="card-body">
               <h4 class="card-title">Data Table</h4>
               <h6 class="card-subtitle">Data table example</h6>
-              <a href="{{route('subcategory')}}">
+              <a href="{{route('brand')}}">
                   <button type="button" class="btn btn-success rounded-capsule btn-sm py-1 m-1 ">
-                      Add Sub Category
+                     Add Brand
                   </button>
               </a>
               <div class="table-responsive m-t-40">
@@ -33,33 +33,31 @@
                       <thead>
                       <tr>
                           <th class="sl no">SL NO</th>
-                          <th class="category_id">Category Name</th>
-                          <th class="name">SUb Category Name</th>
-                          <th class="description"> Description</th>
+                          <th class="name">Brand Name</th>
+                          <th class="description">Description</th>
                           <th class="image">Image</th>
                           <th class="status">Status</th>
                           <th>Action</th>
                       </tr>
                       </thead>
                       <tbody>
-                      @foreach($item as $key =>$subcategory)
+                      @foreach($item as $key =>$brand)
                       <tr>
                           <td class="sl no">{{$key+1}}</td>
-                          <td class="category_id">{{$subcategory->category->name}}</td>
-                          <td class="name">{{$subcategory->name}}</td>
-                          <td class="description">{{$subcategory->description}}</td>
-                          <td><img src="{{asset('uploded/subcategory-file/'.$subcategory->image)}}" alt="" style="height: 50px"></td>
+                          <td class="name">{{$brand->name}}</td>
+                          <td class="description">{{$brand->description}}</td>
+                          <td><img src="{{asset('uploded/Brand-file/'.$brand->image)}}" alt="" style="height: 50px"></td>
                           <td>
-                              @if ($subcategory->status=='1')
+                              @if ($brand->status=='1')
                                   <span class="badge rounded-pill bg-success">Published</span>
                               @else
                                   <span class="badge rounded-pill bg-danger">Unpublished</span>
                               @endif
                           </td>
                           <td class="action">
-                              <a href="{{route('subcategory.edit',$subcategory->id)}}" class="btn btn-sm btn-success"><i class="ti-alert"></i></a>
-                              <a href="{{route('subcategory.destroy',$subcategory->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this item?');"><i class="ti-trash"></i></a>
-                              @if($subcategory->status=='1')
+                              <a href="{{route('brand.edit',$brand->id)}}" class="btn btn-sm btn-success"><i class="ti-alert"></i></a>
+                              <a href="{{route('brand.destroy',$brand->id)}}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this item?');"><i class="ti-trash"></i></a>
+                              @if($brand->status=='1')
                                   <a href=""><i class="fa fa-thumbs-up"></i></a>
                               @else
                                   <a href=""><i class="fa fa-thumbs-down"></i></a>

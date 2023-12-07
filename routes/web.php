@@ -6,6 +6,9 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\UnitController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +45,26 @@ Route::get('/sub-category/edit/{id}',[SubCategoryController::class,'edit'])->nam
 Route::post('/sub-category/update/{id}',[SubCategoryController::class,'update'])->name('subcategory.update');
 Route::get('/sub-category/delete/{id}', [SubCategoryController::class,'destroy'])->name('subcategory.destroy');
 
+Route::get('/brand/create', [BrandController::class,'index'])->name('brand');
+Route::post('/brand/store',[BrandController::class,'store'])->name('brand.store');
+Route::get('/brand/show', [BrandController::class,'show'])->name('brand.show');
+Route::get('/brand/edit/{id}',[BrandController::class,'edit'])->name('brand.edit');
+Route::post('/brand/update/{id}',[BrandController::class,'update'])->name('brand.update');
+Route::get('/brand/delete/{id}', [BrandController::class,'destroy'])->name('brand.destroy');
+
+Route::get('/unit/create', [UnitController::class,'index'])->name('unit');
+Route::post('/unit/store',[UnitController::class,'store'])->name('unit.store');
+Route::get('/unit/show', [UnitController::class,'show'])->name('unit.show');
+Route::get('/unit/edit/{id}',[UnitController::class,'edit'])->name('unit.edit');
+Route::post('/unit/update/{id}',[UnitController::class,'update'])->name('unit.update');
+Route::get('/unit/delete/{id}', [UnitController::class,'destroy'])->name('unit.destroy');
+
+Route::get('/product/create', [ProductController::class,'index'])->name('product');
+Route::get('/product/get-subcategory-by-category',[ProductController::class,'getSubcategoryByCategory'])->name('product.get-subcategory-by-category');
+Route::post('/product/store',[ProductController::class,'store'])->name('product.store');
+Route::get('/product/create', [ProductController::class,'index'])->name('product');
+Route::get('/product/show', [ProductController::class,'show'])->name('product.show');
+Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
+Route::post('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
+Route::get('/product/delete/{id}', [ProductController::class,'destroy'])->name('product.destroy');
+Route::get('/product/view/{id}', [ProductController::class,'view'])->name('product.view');

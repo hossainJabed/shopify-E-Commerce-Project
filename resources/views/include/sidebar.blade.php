@@ -33,8 +33,8 @@
                         <span class="hide-menu">Brand Module</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="ui-cards.html">Create Brand</a></li>
-                        <li><a href="ui-user-card.html">List Brand</a></li>
+                        <li><a href="{{route('brand')}}">Create Brand</a></li>
+                        <li><a href="{{route('brand.show')}}">List Brand</a></li>
                     </ul>
                 </li>
                 <li>
@@ -42,8 +42,8 @@
                         <i class="ti-layout-media-right-alt"></i><span class="hide-menu">Unit Module</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="form-basic.html">Create Unit</a></li>
-                        <li><a href="form-layout.html">List Unit</a></li>
+                        <li><a href="{{route('unit')}}">Create Unit</a></li>
+                        <li><a href="{{route('unit.show')}}">List Unit</a></li>
                     </ul>
                 </li>
                 <li>
@@ -51,7 +51,7 @@
                         </i><span class="hide-menu">Product Module</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="table-basic.html">Create Product</a></li>
+                        <li><a href="{{route('product')}}">Create Product</a></li>
                         <li><a href="table-layout.html">List Product</a></li>
                     </ul>
                 </li>

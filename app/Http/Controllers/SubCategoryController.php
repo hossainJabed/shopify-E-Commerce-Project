@@ -76,8 +76,9 @@ class SubCategoryController extends Controller
      */
     public function edit($id)
     {
+        $category = Category::all();
         $subcategory = SubCategory::find($id);
-        return view('admin.subcategory.edit',['item' =>$subcategory]);
+        return view('admin.subcategory.edit',compact('category','subcategory'));
     }
 
     /**
@@ -96,7 +97,7 @@ class SubCategoryController extends Controller
             else {
                 $imageUrl = $subcategory->file;
             }
-            $subcategory->category_name = $request->category_name;
+            $subcategory->category_id = $request->category_id;
             $subcategory->name = $request->name;
             $subcategory->description = $request->description;
             $subcategory->status = $request->status;
